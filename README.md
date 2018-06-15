@@ -28,8 +28,16 @@ Dependencies:
   * redis-server >= 2.8.0
   * nodejs
   * nginx
-For Ubuntu 16.04 LTS
-GoLang https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
+For Ubuntu 16.04 LTS:
+
+GoLang
+sudo curl -O https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz
+sudo tar -xvf go1.9.1.linux-amd64.tar.gz
+sudo mv go /usr/local
+sudo nano ~/.profile
+export PATH=$PATH:/usr/local/go/bin
+source ~/.profile
+
 Redis Server https://wiki.ubuntuusers.de/Redis/
 NodeJS
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
