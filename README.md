@@ -28,25 +28,46 @@ Dependencies:
   * redis-server >= 2.8.0
   * nodejs
   * nginx
-For Ubuntu 16.04 LTS:
-
-GoLang
-sudo curl -O https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz
-sudo tar -xvf go1.9.1.linux-amd64.tar.gz
-sudo mv go /usr/local
-sudo nano ~/.profile
-export PATH=$PATH:/usr/local/go/bin
-source ~/.profile
-
-Redis Server https://wiki.ubuntuusers.de/Redis/
-NodeJS
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
+For Ubuntu 16.04 LTS blank install:
 
-First install  [go-ethereumclassic](https://github.com/ethereumproject/go-ethereum/releases).
+    sudo apt-get update
+    sudo apt-get install build-essential
+
+GoLang
+
+    sudo curl -O https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz
+    sudo tar -xvf go1.9.1.linux-amd64.tar.gz
+    sudo mv go /usr/local
+
+Install Redis Server
+   
+    sudo apt-get install redis-server
+
+NodeJS
+
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    mkdir ~/.node
+    nano ~/.npmrc
+    
+Add this line to file
+
+    prefix = ~/.node  
+
+Then open ~/.profile and add
+
+    PATH="$HOME/.node/bin:$PATH"  
+    NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"  
+    MANPATH="$HOME/.node/share/man:$MANPATH"      
+    export PATH=$PATH:/usr/local/go/bin
+    
+Close file and reload with 
+
+    source ~/.profile
+
+install  [go-ethereumclassic](https://github.com/ethereumproject/go-ethereum/releases).
 
 Clone & compile:
 
@@ -64,8 +85,10 @@ You can use Ubuntu upstart - check for sample config in <code>upstart.conf</code
 
 ### Building Frontend
 
-Install nodejs. I suggest using LTS version >= 4.x from https://github.com/nodesource/distributions or from your Linux distribution.
+Install nginx
 
+    sudo apt-get install nginx
+        
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     cd www
