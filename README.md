@@ -28,6 +28,13 @@ Dependencies:
   * redis-server >= 2.8.0
   * nodejs
   * nginx
+For Ubuntu 16.04 LTS
+GoLang https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
+Redis Server https://wiki.ubuntuusers.de/Redis/
+NodeJS
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
 
