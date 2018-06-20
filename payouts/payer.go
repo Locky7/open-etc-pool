@@ -31,13 +31,13 @@ type PayoutsConfig struct {
 }
 
 func (self PayoutsConfig) GasHex() string {
-	gas, _ := new(big.Int).SetString(self.Gas, 10)
+	gas, _ := new(big.Int).SetString(self.Gas, 0)
 
 	return common.BigToHash(gas).Hex()
 }
 
 func (self PayoutsConfig) GasPriceHex() string {
-	gasPrice, _ := new(big.Int).SetString(self.GasPrice, 10)
+	gasPrice, _ := new(big.Int).SetString(self.GasPrice, 0)
 
 	return common.BigToHash(gasPrice).Hex()
 }
