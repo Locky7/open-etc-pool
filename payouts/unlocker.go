@@ -497,9 +497,7 @@ func weiToShannonInt64(wei *big.Rat) int64 {
 }
 
 func getUncleReward(uHeight, height int64) *big.Int {
-	reward := new(big.Int).Set(constReward)
-	reward.Mul(big.NewInt(uHeight+8-height), reward)
-	reward.Div(reward, big.NewInt(8))
+	reward := new(big.Int).Set(uncleReward)
 	return reward
 }
 
