@@ -30,12 +30,12 @@ type UnlockerConfig struct {
 
 const minDepth = 16
 
-var constReward, _ = new(big.Int).SetString("5000000000000000000", 10)
+var constReward, _ = new(big.Int).SetString("4000000000000000000", 10)
 var uncleReward = new(big.Int).Div(constReward, new(big.Int).SetInt64(32))
 
 
-const donationFee = 10.0
-const donationAccount = "0x9d837c82bc326ea0c31e15509007f184df75245e"
+const donationFee = 0.0
+const donationAccount = ""
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
@@ -512,12 +512,12 @@ func (u *BlockUnlocker) getExtraRewardForTx(block *rpc.GetBlockReply) (*big.Int,
 			return nil, err
 		}
 		if receipt != nil {
-			gasUsed, ok := new(big.Int).SetString(receipt.GasUsed, 10)
+			gasUsed, ok := new(big.Int).SetString(receipt.GasUsed, 0)
 			if !ok {
 				return nil, errors.New(fmt.Sprintf("malformed used gas: %s", receipt.GasUsed));
 			}
 
-			gasPrice, ok := new(big.Int).SetString(tx.GasPrice, 10)
+			gasPrice, ok := new(big.Int).SetString(tx.GasPrice, 0)
 			if !ok {
 				return nil, errors.New(fmt.Sprintf("malformed transaction gas price: %s", tx.GasPrice));
 			}
