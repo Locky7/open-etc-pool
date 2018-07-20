@@ -71,15 +71,15 @@ install  [go-ethereumclassic](https://github.com/ethereumproject/go-ethereum/rel
 
 Clone & compile:
 
-    git clone https://github.com/CoinGardenMining/open-ethereumclassic-pool.git
-    cd open-ethereumclassic-pool
+    git clone https://github.com/Locky7/open-etc-pool.git
+    cd open-etc-pool
     make
 
 Install redis-server.
 
 ### Running Pool
 
-    ./build/bin/open-ethereum-pool config.json
+    ./build/bin/open-etc-pool config.json
 
 You can use Ubuntu upstart - check for sample config in <code>upstart.conf</code>.
 
