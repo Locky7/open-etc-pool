@@ -56,7 +56,11 @@ Add this line to file
 
     prefix = ~/.node  
 
-Then open ~/.profile and add
+Then
+	
+	nano ~/.profile
+
+Add these lines to file
 
     PATH="$HOME/.node/bin:$PATH"  
     NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"  
@@ -92,14 +96,15 @@ Install nginx
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     cd www
+	nano config/environment.js
 
 Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js</code> to match your domain name. Also don't forget to adjust other options.
 
-    npm install -g ember-cli@2.4.3
-    npm install -g bower
+    sudo npm install -g ember-cli@2.4.3
+    sudo npm install -g bower
     npm install
     bower install
-    ./build.sh
+    sudo ./build.sh
 
 Configure nginx to serve API on <code>/api</code> subdirectory.
 Configure nginx to serve <code>www/dist</code> as static website.
