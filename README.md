@@ -96,9 +96,12 @@ Install nginx
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     cd www
-    nano config/environment.js
 
 Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js</code> to match your domain name. Also don't forget to adjust other options.
+
+    nano config/environment.js
+    
+Now install & build.
 
     sudo npm install -g ember-cli@2.4.3
     sudo npm install -g bower
@@ -106,7 +109,7 @@ Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js<
     bower install
     sudo ./build.sh
 
-Configure nginx to serve API on <code>/api</code> subdirectory.
+Configure nginx to serve API on <code>/api</code> subdirectory.  
 Configure nginx to serve <code>www/dist</code> as static website.
 
 #### Serving API using nginx
@@ -116,7 +119,8 @@ Add this setting after <code>location /</code>:
 	location /api {
 		proxy_pass http://api;
 		}
-		
+See example https://github.com/Locky7/open-etc-pool/blob/master/misc/nginx-default.conf
+
 #### Customization
 
 You can customize the layout using built-in web server with live reload:
@@ -131,6 +135,8 @@ in order to customise the frontend.
 ### Configuration
 
 Configuration is actually simple, just read it twice and think twice before changing defaults.
+
+See 
 
 **Don't copy config directly from this manual. Use the example config from the package,
 otherwise you will get errors on start because of JSON comments.**
@@ -328,6 +334,8 @@ I recommend this deployment strategy:
 * Unlocker and payouts instance - 1x each (strict!)
 * API instance - 1x
 
+If this helps, fill out and run: main, api, unlocker, and payouts as seperate processes.  
+
 ### Notes
 
 * Unlocking and payouts are sequential, 1st tx go, 2nd waiting for 1st to confirm and so on. You can disable that in code. Carefully read `docs/PAYOUTS.md`.
@@ -341,6 +349,7 @@ I recommend this deployment strategy:
 This pool is tested to work with [Ethcore's Parity](https://github.com/ethcore/parity). Mining and block unlocking works, but I am not sure about payouts and suggest to run *official* geth node for payments.
 
 ### Credits
+Updated by CoinGardenMining, Licensed under GPLv3.
 Ported by LeChuckDE, Licensed under GPLv3.
 Made by sammy007. Licensed under GPLv3.
 
