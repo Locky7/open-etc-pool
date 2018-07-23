@@ -114,8 +114,7 @@ Configure nginx to serve <code>www/dist</code> as static website.
 Add this setting after <code>location /</code>:
 
 	location /api {
-		if ($request_uri ~* "/api/(.*)") {
-			proxy_pass  http://127.0.0.1:8080/apietc/$1;
+		proxy_pass http://api;
 		}
 	}
 
