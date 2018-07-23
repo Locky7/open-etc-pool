@@ -119,7 +119,7 @@ Add this setting after <code>location /</code>:
 	location /api {
 		proxy_pass http://api;
 		}
-See example https://github.com/Locky7/open-etc-pool/blob/master/misc/nginx-default.conf
+See example [nginx-default](https://github.com/Locky7/open-etc-pool/blob/master/misc/nginx-default.conf)
 
 #### Customization
 
