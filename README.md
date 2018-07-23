@@ -104,7 +104,12 @@ Now install & build.
     bower install
     sudo ./build.sh
 
-Configure nginx to serve API on <code>/api</code> subdirectory.  
+Configure nginx to serve API on <code>/api</code> subdirectory. 
+
+    upstream api {
+    	    server 127.0.0.1:8080;
+    }
+
 Configure nginx to serve <code>www/dist</code> as static website.
 
 #### Serving API using nginx
