@@ -118,7 +118,8 @@ Add this setting after <code>location /</code>:
 
 	location /api {
 		proxy_pass http://api;
-		}
+	}
+	
 See example [nginx-default](https://github.com/Locky7/open-etc-pool/blob/master/misc/nginx-default.conf)
 
 #### Customization
@@ -334,7 +335,7 @@ I recommend this deployment strategy:
 * Unlocker and payouts instance - 1x each (strict!)
 * API instance - 1x
 
-If this helps, fill out and run: main, api, unlocker, and payouts as seperate processes.  
+These modules are broken out already, just edit and run: main, api, unlocker, and payouts as seperate processes.  
 
 ### Notes
 
