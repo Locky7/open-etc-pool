@@ -96,7 +96,7 @@ Install nginx
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     cd www
-	nano config/environment.js
+    nano config/environment.js
 
 Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js</code> to match your domain name. Also don't forget to adjust other options.
 
@@ -116,8 +116,7 @@ Add this setting after <code>location /</code>:
 	location /api {
 		proxy_pass http://api;
 		}
-	}
-
+		
 #### Customization
 
 You can customize the layout using built-in web server with live reload:
