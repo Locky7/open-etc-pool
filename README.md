@@ -347,7 +347,7 @@ These modules are broken out already, just edit and run: main, api, unlocker, an
 
 ### Alternative Ethereum Implementations
 
-This pool is tested to work with [Ethcore's Parity](https://github.com/ethcore/parity). Mining and block unlocking works, but I am not sure about payouts and suggest to run *official* geth node for payments.
+This pool is tested to work with [ParityTech's Parity](https://github.com/paritytech/parity-ethereum). Mining and block unlocking works, but I am not sure about payouts and suggest to run *official* geth node for payments.
 
 ### Credits
 Updated by CoinGardenMining, Licensed under GPLv3.
